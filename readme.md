@@ -15,7 +15,11 @@ Before starting the install guide be sure that PHP with sqlite support and Node.
 
 Clone the repository:
 ```sh
-git clone git@bitbucket.org:ivanszkypeter/codenames.git
+git clone https://github.com/ivanszkypeter/codenames.git
+```
+Navigate into the downloaded folder:
+```sh
+cd codenames
 ```
 Install the required PHP packages:
 ```sh
@@ -32,6 +36,10 @@ cp .env.example .env
 Generate application key for the Laravel based app:
 ```sh
 php artisan key:generate 
+```
+Create an empty file for the sqlite database:
+```sh
+touch database/database.sqlite
 ```
 Create the databases tables:
 ```sh
