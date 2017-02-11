@@ -11,12 +11,17 @@ And this screen for the leaders:
 
 ## Install guide (Linux: Ubuntu)
 
-Before starting the install guide be sure that PHP with sqlite support and Node.JS is intalled in your computer.
+Before starting the install guide be sure that PHP with sqlite support, Node.JS is intalled, and Redis server is running on your computer.
 
 Clone the repository:
 ```sh
 git clone https://github.com/ivanszkypeter/codenames.git
 ```
+
+> If you want to skip the following steps, do all the steps of the install with only one command:
+> ```sh
+> ./linux-install.sh
+> ```
 Navigate into the downloaded folder:
 ```sh
 cd codenames
@@ -49,7 +54,33 @@ Put some predefined words into them:
 ```sh
 php artisan db:seed --class=WordsTableSeeder
 ```
-Now the game is ready to start. The following command will start a PHP server and the same time a Node.JS server. You can specify the IP adress with the host caption, this will allow you to run your server in the local network area. 
+
+## Install guide (Windows 10)
+
+Before starting the install guide be sure that XAMPP, Composer, Node.JS is intalled on your computer.
+
+> If you want to skip the following steps, do all the steps of the install with only one command:
+> ```sh
+> ./windows-install.sh
+> ```
+
+Open a Git Bash, do all the steps from the linux installation guide and continue with these steps:
+
+Downloaded the latest version of redis:
+
+```sh
+curl https://raw.githubusercontent.com/ServiceStack/redis-windows/master/downloads/redis-latest.zip > redis-latest.zip
+```
+
+Unzip the downloaded file:
+
+```sh
+unzip redis-latest -d redis
+```
+
+## Run the application
+
+Now the game is ready to start. The following command will start a PHP server and the same time a Node.JS server. You can specify the IP adress with the host caption, this will allow you to run your server in the local network area.
 ```sh
 php artisan serve --host 192.168.x.x
 ```
@@ -57,6 +88,7 @@ php artisan serve --host 192.168.x.x
 Navigate in your favourite browser to the screen for everyone: http://192.168.x.x:80/api/game/1/state
 
 Navigate in your favourite browser to the screen for leaders: http://192.168.x.x:80/api/game/1/state?role=boss
+
 
 ## Issues in the game
 
