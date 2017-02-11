@@ -1,5 +1,13 @@
 
-This is the electronical version of the board game called Codenames. 
+This is the test project of the board game called Codenames. The game is written in PHP (Laravel framework), Vue.JS, SCSS. You can load it from any number of different browsers even from different device. The game support the websocket based real time synchronization between them. Due the usage of websocket the game needs installed Node.JS too.
+ 
+There are two screens in the game. This is for everyone: 
+ 
+![Screen for everyone](https://raw.githubusercontent.com/ivanszkypeter/codenames/master/resources/assets/img/1.png)
+
+And this screen for the leaders:
+
+![Screen for the leaders](https://raw.githubusercontent.com/ivanszkypeter/codenames/master/resources/assets/img/2.png)
 
 ## Install guide (Linux: Ubuntu)
 
@@ -38,7 +46,9 @@ Now the game is ready to start. The following command will start a PHP server an
 php artisan serve --host 192.168.x.x
 ```
 
-Navigate in your favourite browser to: http://192.168.x.x:80/
+Navigate in your favourite browser to the screen for everyone: http://192.168.x.x:80/api/game/1/state
+
+Navigate in your favourite browser to the screen for leaders: http://192.168.x.x:80/api/game/1/state?role=boss
 
 ## Issues in the game
 
