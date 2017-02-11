@@ -124,7 +124,7 @@ class GameController extends Controller
         $state["currentTeam"] = $this->nextPlayer[$state["currentTeam"]];
     }
 
-    private function randFieldColors($startTeam) : array
+    private function randFieldColors($startTeam)
     {
         $this->numberOfFields[$startTeam] += 1;
 
@@ -138,7 +138,7 @@ class GameController extends Controller
         return $typeList;
     }
 
-    private function newWord(&$state) : string
+    private function newWord(&$state)
     {
         $newWord = Word::inRandomOrder()->first()->word;
         for ($i = 0; $i < 5; $i++) {
@@ -173,7 +173,7 @@ class GameController extends Controller
         event(new RoomUpdate($roomId, $this->calcFieldPosition($state)));
     }
 
-    private function randCurrentTeam(): string
+    private function randCurrentTeam()
     {
         return rand(0, 1) == 0 ? "red" : "blue";
     }
