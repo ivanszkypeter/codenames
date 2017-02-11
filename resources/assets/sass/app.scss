@@ -1,0 +1,277 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// Variables
+@import "variables";
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+#wordsTable tr td {
+  text-align: center;
+  position: relative;
+  perspective: 800px;
+  vertical-align: middle;
+}
+
+#wordsTable {
+  height: 100%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #444444;
+  border: 20px solid #818181;
+  border-radius: 25px;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  cursor: pointer;
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+  .front {
+    color: #000;
+    background: #dfcc9d;
+
+    .element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffebb4;
+      height: 35px;
+    }
+
+    @media (min-width: 1281px) {
+      .element {
+        width: 80%;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .element {
+        width: 100%;
+      }
+    }
+  }
+
+  .front.red {
+    background: radial-gradient(circle, #f15154, #ea1e2f);
+  }
+
+  .front.blue {
+    background: radial-gradient(circle, #45a2c5, #1085b4);
+  }
+
+  .front.netural {
+    background-color: #dfcc9d;
+  }
+
+  .front.death {
+    background-color: #383533;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .back.red {
+    background: radial-gradient(circle, #f15154, #ea1e2f);
+
+    .element1 {
+      border: 6px solid #f49184;
+      width: 8vh;
+      height: 8vh;
+      max-width: 6vw;
+      max-height: 6vw;
+      border-radius: 15px;
+      position: absolute;
+      background: radial-gradient(circle, #ee3e45, #c22526);
+      transform: rotate(45deg);
+    }
+  }
+
+  .back.blue {
+    background: radial-gradient(circle, #45a2c5, #1085b4);
+
+    .element1 {
+      border: 6px solid #47bfe8;
+      width: 9vh;
+      height: 9vh;
+      max-width: 6vw;
+      max-height: 6vw;
+      border-radius: 50px;
+      position: absolute;
+      background: radial-gradient(circle, #0f81ae, #0d608c);
+    }
+  }
+
+  .back.netural {
+    background: #dfcc9d;
+    transform: rotateY(180deg);
+  }
+
+  .back.death {
+    background: radial-gradient(circle, #949392, #383533);
+
+    .element1 {
+      width: 10%;
+      height: 50%;
+      left: 45%;
+      border-radius: 5px;
+      position: absolute;
+      top: 25%;
+      background-color: #030205;
+      transform: rotate(45deg);
+      box-shadow: 0px 0px 25px #fff;
+    }
+
+    .element2 {
+      width: 10%;
+      height: 50%;
+      left: 45%;
+      border-radius: 5px;
+      position: absolute;
+      top: 25%;
+      background-color: #030205;
+      transform: rotate(-45deg);
+      box-shadow: 0px 0px 25px #fff;
+    }
+  }
+
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transition: background-color 500ms ease-out 0s;
+
+  &.blueTurn {
+    background-color: #3083af;
+  }
+
+  &.redTurn {
+    background-color: #ec636f;
+  }
+}
+
+.scoreBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 35vh;
+  width: 30vh;
+  height: 30vh;
+}
+
+.score {
+  color: #FFF;
+  text-align: center;
+  position: relative;
+  font-family: sans-serif;
+}
+
+@media (min-width: 1367px) {
+  .score {
+    font-size: 110px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1366px) {
+  .score {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .score {
+    font-size: 60px;
+  }
+}
+
+#redScore {
+  right: 84vw;
+
+  .element {
+    border: 6px solid #f49184;
+    width: 45%;
+    height: 45%;
+    left: 27.5%;
+    border-radius: 15px;
+    position: absolute;
+    background: radial-gradient(circle, #ee3e45, #c22526);
+    transform: rotate(45deg);
+  }
+}
+
+#blueScore {
+  left: 84vw;
+
+  .element {
+    border: 6px solid #47bfe8;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    border-radius: 100px;
+    position: absolute;
+    background: radial-gradient(circle, #0f81ae, #0d608c);
+  }
+}
+
+.next {
+  position: absolute;
+  top: 76vh;
+  width: 30vh;
+  text-align: center;
+  color: #FFF;
+  line-height: 50px;
+  font-size: 34px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+#redNext {
+  right: 84vw;
+
+  &>div {
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: radial-gradient(circle, #ee3e45, #c22526);
+  }
+}
+
+#blueNext {
+  left: 84vw;
+
+  &>div {
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: radial-gradient(circle, #0f81ae, #0d608c);
+  }
+}
