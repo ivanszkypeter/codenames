@@ -22,6 +22,7 @@ git clone https://github.com/ivanszkypeter/codenames.git
 > ```sh
 > ./linux-install.sh
 > ```
+
 Navigate into the downloaded folder:
 ```sh
 cd codenames
