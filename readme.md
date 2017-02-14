@@ -86,9 +86,9 @@ Now the game is ready to start. The following command will start a PHP server an
 php artisan serve --host 192.168.x.x
 ```
 
-Navigate in your favourite browser to the screen for everyone: http://192.168.x.x:80/api/game/1/state
+Navigate in your favourite browser to the screen for everyone: http://192.168.x.x:8000/game/room/1
 
-Navigate in your favourite browser to the screen for leaders: http://192.168.x.x:80/api/game/1/state?role=boss
+Navigate in your favourite browser to the screen for leaders: http://192.168.x.x:8000/game/room/1?role=boss
 
 
 ## Issues in the game
