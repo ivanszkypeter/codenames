@@ -40,11 +40,9 @@ class ServeCommand extends Command
 
         $base = ProcessUtils::escapeArgument($this->laravel->basePath());
 
-        $binary = ProcessUtils::escapeArgument((new PhpExecutableFinder())->find(false));
-
         $this->info("Laravel development server started on http://{$host}:{$port}/");
 
-        passthru("{$binary} -S {$host}:{$port} {$base}/server.php & node ../nodejs/socket {$host}");
+        passthru("php -S {$host}:{$port} {$base}/server.php & node ../nodejs/socket {$host}");
     }
 
     /**
