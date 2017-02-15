@@ -4,6 +4,7 @@
 [![StyleCI Status](https://styleci.io/repos/81387001/shield)](https://styleci.io/repos/81387001)
 [![Quality Score](https://img.shields.io/scrutinizer/g/ivanszkypeter/codenames.svg?style=flat-square)](https://scrutinizer-ci.com/g/ivanszkypeter/codenames/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg?style=flat-square)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Build Status](https://travis-ci.org/ivanszkypeter/codenames.svg?branch=master)](https://travis-ci.org/ivanszkypeter/codenames)
 [![Latest Version](https://img.shields.io/github/release/ivanszkypeter/codenames.svg?style=flat-square)](https://github.com/ivanszkypeter/codenames/releases)
 
 This is the test project of the board game called Codenames. The game is written in PHP (Laravel framework), Vue.JS, SCSS. You can load it from any number of different browsers even from different device. The game support the websocket based real time synchronization between them. Due the usage of websocket the game needs installed Node.JS too.
