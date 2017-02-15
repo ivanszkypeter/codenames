@@ -67,9 +67,8 @@ class GameController extends Controller
             $state['table'][$x][$y]['word'] = $this->newWord($state);
         }
         if ($state['state'] == 'game') {
-            $field = $state['table'][$x][$y];
-            $field['flipped'] = true;
-            switch ($field['type']) {
+            $state['table'][$x][$y]['flipped'] = true;
+            switch ($state['table'][$x][$y]['type']) {
                 case 'death':
                     if ($state['currentTeam'] === 'red') {
                         $state['score']['red'] = 0;
@@ -84,7 +83,7 @@ class GameController extends Controller
                     $this->nextPlayer($state);
                     break;
                 default:
-                    $team = $field['type'];
+                    $team = $state['table'][$x][$y]['type'];
                     $state['score'][$team]++;
                     if ($state['currentTeam'] != $team) {
                         $this->nextPlayer($state);
