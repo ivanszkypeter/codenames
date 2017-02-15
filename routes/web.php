@@ -20,5 +20,5 @@ Route::get('/game/room/{id}', function ($id) {
 });
 
 Route::get('/env', function () {
-    print App::environment();
+    echo App::environment();
 });

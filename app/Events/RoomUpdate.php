@@ -19,7 +19,7 @@ class RoomUpdate implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($roomId,$data)
+    public function __construct($roomId, $data)
     {
         $this->roomId = $roomId;
         $this->data = $data;
