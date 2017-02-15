@@ -12,6 +12,13 @@
 |
 */
 
+Route::get('/word/', 'WordController@index');
+Route::get('/word/{id}', 'WordController@show');
+Route::post('/word/', 'WordController@store');
+Route::put('/word/{id}', 'WordController@update');
+Route::delete('/word/{id}', 'WordController@destroy');
+
+Route::get('/game/{id}/state', 'GameController@getRoomState');
 Route::get('/game/{id}/state', 'GameController@getRoomState');
 Route::get('/game/{id}/flip/{x}/{y}', 'GameController@flip');
 Route::get('/game/{id}/turn', 'GameController@turn');
