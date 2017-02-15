@@ -67,20 +67,9 @@ class GameController extends Controller
             $state['table'][$x][$y]['word'] = $this->newWord($state);
         }
         if ($state['state'] == 'game') {
-            $state['table'][$x][$y]['flipped'] = true;
-            switch ($state['table'][$x][$y]['type']) {
-                case 'red':
-                    $state['score']['red']++;
-                    if ($state['currentTeam'] === 'blue') {
-                        $this->nextPlayer($state);
-                    }
-                    break;
-                case 'blue':
-                    $state['score']['blue']++;
-                    if ($state['currentTeam'] === 'red') {
-                        $this->nextPlayer($state);
-                    }
-                    break;
+            $field = $state['table'][$x][$y];
+            $field['flipped'] = true;
+            switch ($field['type']) {
                 case 'death':
                     if ($state['currentTeam'] === 'red') {
                         $state['score']['red'] = 0;
@@ -93,6 +82,14 @@ class GameController extends Controller
                     break;
                 case 'netural':
                     $this->nextPlayer($state);
+                    break;
+                default:
+                    $team = $field['type'];
+                    $state['score'][$team]++;
+                    if ($state['currentTeam'] != $team) {
+                        $this->nextPlayer($state);
+                    }
+                    break;
             }
         }
         $room->state = $state;
