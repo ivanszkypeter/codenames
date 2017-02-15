@@ -1,4 +1,8 @@
 
+# Codenames
+
+[![StyleCI Status](https://styleci.io/repos/81387001/shield)](https://styleci.io/repos/81387001)
+
 This is the test project of the board game called Codenames. The game is written in PHP (Laravel framework), Vue.JS, SCSS. You can load it from any number of different browsers even from different device. The game support the websocket based real time synchronization between them. Due the usage of websocket the game needs installed Node.JS too.
  
 There are two screens in the game. This is for everyone: 
