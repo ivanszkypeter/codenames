@@ -126,6 +126,9 @@ class GameController extends Controller
         $state['currentTeam'] = $this->nextPlayer[$state['currentTeam']];
     }
 
+    /**
+     * @param string $startTeam
+     */
     private function randFieldColors($startTeam)
     {
         $this->numberOfFields[$startTeam] += 1;
